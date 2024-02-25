@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+
+    </head>
+    <body style="background-color: aqua;">
+    <section id="game">
+    
+   <center> <section id="ls"><div class="zero rs" onclick="hit(0)">0</div>  
+    <div class="one rs" onclick="hit('1')">1</div>
+    <div class="two rs" onclick="hit(2)">2</div>
+    <div onclick="hit(3)" class="three rs">3</div>
+    <div onclick="hit(4)" class="four rs">4</div>
+    <div onclick="hit(5)" class="five rs">5</div>
+    <div onclick="hit(6)" class="six rs">6</div>
+   <br>
+       <a style="font-size: 20px;">Touch the number and if you will ponit added</a>
+   </center>
+       </section>
+   <br>
+   <hr width="100%" height="29px">
+   <br>
+   <br><br>
+   <img class="ball" src="http://t0.gstatic.com/images?q=tbn:ANd9GcTHsvDW-A3Y0EEzaJsB03uJoHu7ttEB6FDH6N_QijRN2q_j-hXKAlSzNwg" id="ball6">
+   
+   <img class="ball" src="http://t0.gstatic.com/images?q=tbn:ANd9GcScH8EyFNYHfiLMgg4-k8papZ_TnUsAFGnsyJa9r-wx1yHUk8qYyVuPRsh5" style="transform:rotate(270deg)" id="ball1">
+   <img class="ball" src="http://t0.gstatic.com/images?q=tbn:ANd9GcQOjvpGei1yWe1UFKhFrwRG-HDjiIsrfzycU95E_AlU3s-Z2MnET91TLio" id="ball2" style="transform:rotate(-90deg)">
+   <img class="ball" src="http://t0.gstatic.com/images?q=tbn:ANd9GcRsi5XDa2EbNPLW1V3VXjtyb3Wj_UB1ECqPPIfSS4-4Mo1Oc9Kqj5v5tmI" style="transform:rotate(-90deg)"id="ball3">
+   <img class="ball" src="http://t0.gstatic.com/images?q=tbn:ANd9GcSG8QQf3WOEmW3oYwYp9ugnJ8Ranclen7ZOlj6R71XbRAdAh3EGRXsmTA" style="transform:rotate(-90deg)" id="ball4">
+   <img class="ball" src="http://t0.gstatic.com/images?q=tbn:ANd9GcTU18cHl-pRJrL-PWWrNbHW_YtoYPqP2cwKVBfa1XTbQDvRyC3RwhcqKA" id="ball5">
+   <img class="ball" src="http://t0.gstatic.com/images?q=tbn:ANd9GcTSrrsJRZ08kXsNjX18ViEQ2vWbWg-GBi05VKixrN-y54Ns7OTzc4EIZ_4W" style="transform:rotate(-90deg)" id="ball0">
+   
+   <img class="bat" src="http://t0.gstatic.com/images?q=tbn:ANd9GcRv5C-BDNTPoEE9DXMnuSCUIXf-x3jd9hv1fu39jpIHBX3LRg4prJERYXmJ" id="bat6">
+    <img class="bat" src="http://t0.gstatic.com/images?q=tbn:ANd9GcS7IUPV0xHWdVQFH0rFsUHdjIhjew9dcrloIfYM_gtvLk4zpHjOAt9TwuK_" id="bat1" style="transform:rotate(90deg)">
+     <img class="bat" src="http://t0.gstatic.com/images?q=tbn:ANd9GcQOjvpGei1yWe1UFKhFrwRG-HDjiIsrfzycU95E_AlU3s-Z2MnET91TLio" id="bat2" style="transform:rotate(90deg)">
+      <img class="bat" src="http://t0.gstatic.com/images?q=tbn:ANd9GcRsi5XDa2EbNPLW1V3VXjtyb3Wj_UB1ECqPPIfSS4-4Mo1Oc9Kqj5v5tmI" id="bat3" style="transform:rotate(90deg)">
+       <img class="bat" src="http://t0.gstatic.com/images?q=tbn:ANd9GcQrvgOtW-uTv0HLjhjipJardfbENDfxxw3CLO3aivM9FVgv55XVR3Z6X1HKLQ" style="transform:rotate(90deg)"id="bat4">
+        <img class="bat" src="http://t0.gstatic.com/images?q=tbn:ANd9GcTU18cHl-pRJrL-PWWrNbHW_YtoYPqP2cwKVBfa1XTbQDvRyC3RwhcqKA" id="bat5">
+         <img class="bat" src="http://t0.gstatic.com/images?q=tbn:ANd9GcTSrrsJRZ08kXsNjX18ViEQ2vWbWg-GBi05VKixrN-y54Ns7OTzc4EIZ_4W" style="transform:rotate(90deg)" id="bat0">
+       <center> <h1 class="m">YOUR SCORE = <input style="height:40px;width:80px;background-color:transparent;font-size:40px;border:none;color:red;text-shadow:2px 2px Brown"id="real" value="0" disabled></span></h1></center>
+       
+       
+       <input style="visibility:hidden"value="0"id="he">
+       
+       </section>
+       
+       <div id="out"class="out" onclick="at()">
+        OUT!!!
+        <img src="https://cdn4.iconfinder.com/data/icons/game-ui-pack-02/500/repeat-128.png" height="70px" width="70px" style="position:relative;left:140px;top:30px" onclick="again()">
+       </div>
+       
+    </body>
+</html>
+
+
+
+
+
+<body>
+
+
+<script>
+
+alert("Its a game which is based on Cricket.\nTap on the moving numbers to score points.\nIf the number on which you tap is same as of selection of Computer, then you will OUT!\nThumb indicates 6 POINTS")
+alert("Please upvote this code if you like this code & game comment your highest score")
+function hit(main){
+    var numbers = [2,1,6,5,4,3,0,5,6];
+    var baller = numbers[Math.floor(Math.random()*numbers.length )];
+    var bals =0;
+    var rs = 0;
+    bals++;
+    var out = document.getElementById("out");
+    var bat0 = document.getElementById("bat0");
+    var bat1 = document.getElementById("bat1");
+    var bat2 = document.getElementById("bat2");
+    var bat3 = document.getElementById("bat3");
+    var bat4 = document.getElementById("bat4");
+    var bat5 = document.getElementById("bat5");
+    var bat6 = document.getElementById("bat6");
+    
+    var real = document.getElementById("he").value;
+    
+    var ball0 = document.getElementById ("ball0");
+    var ball1 = document.getElementById("ball1");
+    var ball2 = document.getElementById("ball2");
+    var ball3 = document.getElementById("ball3");
+    var ball4 = document.getElementById("ball4");
+    var ball5 = document.getElementById("ball5");
+    var ball6 = document.getElementById("ball6");
+    
+    if(main==0){
+     bat0.style.visibility="visible"; 
+     bat1.style.visibility="hidden";
+     bat2.style.visibility="hidden";
+     bat3.style.visibility="hidden";
+     bat4.style.visibility="hidden";
+     bat5.style.visibility="hidden";
+     bat6.style.visibility="hidden";
+    }
+    else if(main==1){
+     bat0.style.visibility="hidden"; 
+     bat1.style.visibility="visible";
+     bat2.style.visibility="hidden";
+     bat3.style.visibility="hidden";
+     bat4.style.visibility="hidden";
+     bat5.style.visibility="hidden";
+     bat6.style.visibility="hidden";
+    }
+    else if(main==2){
+     bat0.style.visibility="hidden"; 
+     bat1.style.visibility="hidden";
+     bat2.style.visibility="visible";
+     bat3.style.visibility="hidden";
+     bat4.style.visibility="hidden";
+     bat5.style.visibility="hidden";
+     bat6.style.visibility="hidden"; 
+    }
+    else if(main==3){
+     bat0.style.visibility="hidden"; 
+     bat1.style.visibility="hidden";
+     bat2.style.visibility="hidden";
+     bat3.style.visibility="visible";
+     bat4.style.visibility="hidden";
+     bat5.style.visibility="hidden";
+     bat6.style.visibility="hidden";
+    }
+    else if(main==4){
+         bat0.style.visibility="hidden"; 
+     bat1.style.visibility="hidden";
+     bat2.style.visibility="hidden";
+     bat3.style.visibility="hidden";
+     bat4.style.visibility="visible";
+     bat5.style.visibility="hidden";
+     bat6.style.visibility="hidden";
+    }
+    else if(main==5){
+        bat0.style.visibility="hidden"; 
+     bat1.style.visibility="hidden";
+     bat2.style.visibility="hidden";
+     bat3.style.visibility="hidden";
+     bat4.style.visibility="hidden";
+     bat5.style.visibility="visible";
+     bat6.style.visibility="hidden"; 
+    }
+    
+    else if(main==6){
+       bat0.style.visibility="hidden"; 
+     bat1.style.visibility="hidden";
+     bat2.style.visibility="hidden";
+     bat3.style.visibility="hidden";
+     bat4.style.visibility="hidden";
+     bat5.style.visibility="hidden";
+     bat6.style.visibility="visible";  
+    }
+
+    if(baller==0){
+        ball0.style.visibility="visible"; 
+     ball1.style.visibility="hidden";
+     ball2.style.visibility="hidden";
+     ball3.style.visibility="hidden";
+     ball4.style.visibility="hidden";
+     ball5.style.visibility="hidden";
+     ball6.style.visibility="hidden";
+    }
+    else if(baller==1){
+     ball0.style.visibility="hidden"; 
+     ball1.style.visibility="visible";
+     ball2.style.visibility="hidden";
+     ball3.style.visibility="hidden";
+     ball4.style.visibility="hidden";
+     ball5.style.visibility="hidden";
+     ball6.style.visibility="hidden";   
+    }
+    else if(baller==2){
+       ball0.style.visibility="hidden"; 
+     ball1.style.visibility="hidden";
+     ball2.style.visibility="visible";
+     ball3.style.visibility="hidden";
+     ball4.style.visibility="hidden";
+     ball5.style.visibility="hidden";
+     ball6.style.visibility="hidden"; 
+    }
+else if(baller==3){
+    ball0.style.visibility="hidden"; 
+     ball1.style.visibility="hidden";
+     ball2.style.visibility="hidden";
+     ball3.style.visibility="visible";
+     ball4.style.visibility="hidden";
+     ball5.style.visibility="hidden";
+     ball6.style.visibility="hidden";
+}
+else if(baller==4){
+    ball0.style.visibility="hidden"; 
+     ball1.style.visibility="hidden";
+     ball2.style.visibility="hidden";
+     ball3.style.visibility="hidden";
+     ball4.style.visibility="visible";
+     ball5.style.visibility="hidden";
+     ball6.style.visibility="hidden";
+}
+else if(baller==5){
+    ball0.style.visibility="hidden"; 
+     ball1.style.visibility="hidden";
+     ball2.style.visibility="hidden";
+     ball3.style.visibility="hidden";
+     ball4.style.visibility="hidden";
+     ball5.style.visibility="visible";
+     ball6.style.visibility="hidden";
+}
+else if(baller==6){
+   ball0.style.visibility="hidden"; 
+     ball1.style.visibility="hidden";
+     ball2.style.visibility="hidden";
+     ball3.style.visibility="hidden";
+     ball4.style.visibility="hidden";
+     ball5.style.visibility="hidden";
+     ball6.style.visibility="visible"; 
+}
+var xx = document.getElementById("he").value;
+var qu = eval(xx);
+
+if(main==baller){
+navigator.vibrate(500);
+document.getElementById("out").style.visibility="visible";
+
+document.getElementById ("ls").style.visibility ="hidden";
+
+    
+}
+else if(main!=baller){
+   document.getElementById("he").value+=("+"+main);
+}
+var xx = document.getElementById("he").value;
+var qu = eval(xx);
+
+document.getElementById("real").value=qu;
+}
+function at(){
+    var xx = document.getElementById("he").value;
+var qu = eval(xx);
+
+}
+function again(){
+    document.getElementById("ls").style.visibility="visible";
+    document.getElementById("out").style.visibility="hidden";
+    document.getElementById("he").value="0";
+    document.getElementById("real").value="0";
+}
+
+
+  
+</script>
+  <style>
+    div {
+   height:47px; 
+   width:47px;
+   font-size:47px;
+   background-color:transparent ;
+   float:left;
+   text-align:center;
+   color:red;
+   text-shadow:2px 3px yellow;
+}
+img.ball{
+    height:150px;
+    width:150px;
+    position:absolute;
+    right:15px;
+    float:right;
+    top:110px;
+    visibility:hidden;
+}
+img.bat{
+    height:150px;
+    width:150px;
+    position:absolute ;
+    left:15px;
+    top:110px;
+    visibility:hidden;
+}
+h1.m{
+    position:relative ;
+    top:100px;
+    color:red;
+    text-shadow:2px 2px brown;
+    border:solid 2px black;
+}
+div.out{
+    font-size:110px;
+    text-decoration:bold;
+    font-weight:bolder;
+    font-family:'knewave' , cursive;
+    color:#f23;
+    text-shadow:5px 5px grey;
+    position:absolute;
+    top:100px;
+    left:10px;
+    visibility:hidden;
+    
+}
+  </style>
+</body>
+  
+</html>
